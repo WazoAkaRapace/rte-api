@@ -3,10 +3,10 @@
 from setuptools import setup
 
 setup(
-    name="rte-api",
+    name="rte-tempo-api",
     version="1.0.0",
     packages=[
-        "rte-api",
+        "rte-tempo-api",
     ],
     url="https://github.com/WazoAkaRapace/rte-api",
     license="MIT",
