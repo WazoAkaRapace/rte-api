@@ -1,3 +1,4 @@
+import base64
 import datetime
 from datetime import datetime as d
 
@@ -12,9 +13,10 @@ class RteApi:
     api_token_path = "/token/oauth"
     next_token_refresh = None
 
-    def __init__(self, api_key):
+    def __init__(self, id_client, id_secret):
         self.headers = {}
-        self.login_headers = {"Authorization": "Basic " + api_key}
+        token = base64.b64encode(bytes(id_client + ":" + id_secret, 'utf-8')).decode('utf-8')
+        self.login_headers = {"Authorization": "Basic " + token}
         self.login()
 
     def get_calendar(self):
